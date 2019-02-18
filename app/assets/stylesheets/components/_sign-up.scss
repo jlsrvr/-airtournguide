@@ -1,0 +1,25 @@
+.container {
+  width: 400px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container .btn {
+  margin-top: 10px;
+}
+
+.container .btn a {
+  color: black;
+  font-size: 14px;
+}
+
+.container .btn a:hover {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+input.btn {
+  box-shadow: 2px 2px 2px darkgrey;
+}
