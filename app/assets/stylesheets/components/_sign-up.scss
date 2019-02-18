@@ -1,4 +1,4 @@
-.container {
+.container.sign-up{
   width: 400px;
 }
 
@@ -6,20 +6,20 @@
   text-align: center;
 }
 
-.container .btn {
+.container .btn.sign-up {
   margin-top: 10px;
 }
 
-.container .btn a {
+.container .btn.sign-up a {
   color: black;
   font-size: 14px;
 }
 
-.container .btn a:hover {
+.container .btn.sign-up a:hover {
   text-decoration: none;
   font-size: 16px;
 }
 
-input.btn {
+input.btn.sign-up {
   box-shadow: 2px 2px 2px darkgrey;
 }
