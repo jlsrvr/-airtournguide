@@ -1,0 +1,11 @@
+  <ul>
+ <% @tours.each do |tour| %>
+ <li>
+ <%=   tour.name %> : <%= tour.description %> <%= tour.price %> <%= tour.city %>
+
+</li>
+
+<% end %>
+
+
+</ul>

@@ -1,10 +1,10 @@
 class ToursController < ApplicationController
+  before_action :find_tour, only: [:show, :edit, :update, :destroy]
   def index
     @tours = Tour.all
   end
 
   def show
-    @tour = Tour.find(params[:id])
   end
 
   def new
@@ -12,7 +12,6 @@ class ToursController < ApplicationController
   end
 
   def edit
-    @tour = Tour.find(params[:id])
   end
 
   def create
@@ -25,13 +24,11 @@ class ToursController < ApplicationController
   end
 
   def update
-    @tour = Tour.find(params[:id])
     @tour.update(tours_params)
     redirect_to tour_path(@tour)
   end
 
   def destroy
-    @tour = Tour.find(params[:id])
     @tour.destroy
     redirect_to tours_path
   end
@@ -40,5 +37,9 @@ class ToursController < ApplicationController
 
   def tours_params
     params.require(:tour).permit(:name, :price, :description, :city)
+  end
+
+  def find_tour
+    @tour = Tour.find(params[:id])
   end
 end
