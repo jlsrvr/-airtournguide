@@ -1,0 +1,23 @@
+<div class="banner banner-show" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <h1><%= @tour.name %></h1>
+    <p>A tour in <%= @tour.city.capitalize %>, with <%= @tour.user.first_name.capitalize %></p>
+    <a class="btn btn-primary btn-lg">Book this tour</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-9">
+      <h4>Tour description</h4>
+      <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non officia itaque repellat quod provident facere, sit eum vero fugit sequi autem nostrum, minima odit rem aliquam sunt assumenda voluptas iusto.</span>
+      <span>Sint, temporibus, nulla. In neque modi sint sequi voluptas nostrum, et temporibus, optio nobis, dolor cum! Ratione dicta quibusdam, dolore iusto tempore facilis est maxime itaque, recusandae, provident aliquam ea!</span>
+      <span>Unde incidunt, aliquam tempora neque sapiente repellat dignissimos distinctio alias quas odit. Earum blanditiis, consectetur. Alias veniam quibusdam dolores assumenda suscipit minima, odit, cum, magnam tempora adipisci commodi quidem deserunt.</span></p>
+      <p><%= @tour.price %></p>
+    </div>
+    <div class="col-xs-3">
+      <h4>Guide</h4>
+      <%= @tour.user.first_name %>
+    </div>
+  </div>
+</div>
