@@ -1,7 +1,8 @@
 class ToursController < ApplicationController
   before_action :find_tour, only: [:show, :edit, :update, :destroy]
   def index
-    @tours = Tour.all
+    @tours = policy_scope(Tour).order(created_at: :asc)
+  end
   end
 
   def show
@@ -9,6 +10,7 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
+    authorize @tour
   end
 
   def edit
@@ -16,6 +18,7 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tours_params)
+    authorize @tour
     @tour.user = current_user
     if @tour.save!
       redirect_to tour_path(@tour)
@@ -42,5 +45,6 @@ class ToursController < ApplicationController
 
   def find_tour
     @tour = Tour.find(params[:id])
+    authorize @tour
   end
 end
