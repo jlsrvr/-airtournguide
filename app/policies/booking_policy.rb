@@ -6,9 +6,13 @@ class BookingPolicy < ApplicationPolicy
       # record.user == user (voyageur --> book Tour)
     end
   end
-  def show?
+  def destroy?
     if record.tour.user == user || record.user == user
       true
     end
+  end
+
+  def create?
+    true
   end
 end
