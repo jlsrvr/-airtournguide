@@ -3,13 +3,16 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.find(params[:id])
+    @tour = Tour.find(params[:tour_id])
+    @booking = Booking.new
   end
 
   def create
-    @booking = Booking.find(booking_params)
+    @tour = Tour.find(params[:tour_id])
+    @date = "#{booking_params['date(2i)']}#{booking_params['date(3i)']}#{booking_params['date(1i)']}"
+    @booking = Booking.new(date: @date, tour: @tour, user: current_user)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to tours_path
     else
       render :new
     end
@@ -18,6 +21,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :date)
+    params.require(:booking).permit(:status, :date, :tour_id)
   end
 end
