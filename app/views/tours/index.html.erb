@@ -24,7 +24,8 @@
       <div class="row">
           <div class="cards-I">
           <% @tours.each do |tour| %>
-           <%= link_to "<div class='card-trip'>
+           <%= link_to "<div class='card-trip'
+           style='background-image: url('<%= cl_image_path tour.photo %>')'>
               <img src='https://picsum.photos/200/300/?random'>
               <div class='card-trip-infos'>
                 <div>
@@ -34,10 +35,10 @@
                <h2 class='card-trip-pricing'>#{tour.price}€</h2>
                <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class='card-trip-user avatar-bordered'/>
               </div>
-            </div>".html_safe, tour_path(tour) %>
+            </div>" %>
             <% end %>
           </div>
-        </div>.html_safe tour_path %>
+        </div>
       </div>
     <div class="col-xs-4" id="map">
       <img src="https://images.unsplash.com/photo-1532154066703-3973764c81fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
