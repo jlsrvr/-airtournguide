@@ -5,4 +5,5 @@ class Tour < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :city, presence: true
+  mount_uploader :photo, PhotoUploader
 end
