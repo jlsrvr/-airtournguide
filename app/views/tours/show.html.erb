@@ -2,7 +2,7 @@
   <div class="container text-center">
     <h1><%= @tour.name %></h1>
     <p>A tour in <%= @tour.city.capitalize %>, with <%= @tour.user.first_name.capitalize %></p>
-    <a class="btn-yours">Book this tour</a>
+    <p class="btn btn-yours"><%= link_to "Book this tour", new_tour_booking_path(@tour) %></p>
   </div>
 </div>
 
