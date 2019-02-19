@@ -4,6 +4,7 @@
   <% @tours.each do |tour| %>
     <li>
       <%= tour.name %> : <%= tour.description %> <%= tour.price %> <%= tour.city %>
+      <%= cl_image_tag tour.photo, height: 30, width: 40, crop: :fill %>
     </li>
   <% end %>
 </ul>
