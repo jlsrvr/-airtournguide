@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @my_bookings = current_user.bookings
+    @booked = current_user.bookings_as_guide
   end
 
   def new
@@ -13,11 +14,11 @@ class BookingsController < ApplicationController
   def create
     @tour = Tour.find(params[:tour_id])
     authorize @tour
-    @date = "#{booking_params['date(2i)']}#{booking_params['date(3i)']}#{booking_params['date(1i)']}"
+    @date = params[:booking][:date]
     @booking = Booking.new(date: @date, tour: @tour, user: current_user)
     authorize @booking
     if @booking.save
-      redirect_to tours_path
+      redirect_to bookings_path
     else
       render :new
     end
