@@ -1,5 +1,5 @@
 .btn-yours {
-  color: #53BDFF;
+  color: white;
   size: 75vh;
   font-weight: bold;
   border: 1px solid #53BDFF;
@@ -10,10 +10,15 @@
   transition: 0.5s ease;
 }
 
+.btn-yours a {
+  color: white;
+}
+
 .btn-yours:hover {
   border-bottom-right-radius: 14px;
   border-top-left-radius: 14px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0px;
+  border: 1px solid #e6b30e;
   opacity: 1;
 }
