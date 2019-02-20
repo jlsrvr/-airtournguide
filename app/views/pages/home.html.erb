@@ -12,61 +12,32 @@
 </div>
 
 <div class="container">
-  <div class="cards">
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1515859033836-a0a913c0f94a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Old Fashionned Paris</h2>
-          <p>Une immersion dans le vieux paris</p>
+  <div class="col-xs-12">
+    <!-- <div class="cards"> -->
+      <% @tours = Tour.all %>
+      <% @tours.each do |tour| %>
+        <div class= 'col-xs-12 col-sm-6 col-md-4'>
+          <div class='card-trip '>
+            <div class="card-body" style="background-image:url(
+            <% if tour.photo.present? %>
+              '<%= cl_image_path tour.photo %>'
+            <% else %>
+              '<%= cl_image_path "https://picsum.photos/500/300/?random" %>'
+            <% end %>)",
+            >
+            </div>
+            <div class='card-trip-infos'>
+              <div>
+                <h2><%=tour.name%></h2>
+                <p><%= tour.description%> </p>
+              </div>
+              <h2 class='card-trip-pricing'><%=  tour.price%> €</h2>
+              <%=   cl_image_tag tour.user.photo, class: 'card-trip-user avatar-bordered'%>
+            </div>
+            <%= link_to '', tour_path(tour), class: 'card-link' %>
+          </div>
         </div>
-        <h2 class="card-trip-pricing">30€</h2>
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1505330003098-720b32d7a7a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=621&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Un Paris sur l'avenir</h2>
-          <p>Découvrez la Défense</p>
-        </div>
-        <h2 class="card-trip-pricing">20€</h2>
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1516792420189-90be9f795331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Venise Vedi Vice</h2>
-          <p>Dal ponte Rialto alla Piazza San Marco</p>
-        </div>
-        <h2 class="card-trip-pricing">30€</h2>
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1516792420189-90be9f795331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Venise Vedi Vice</h2>
-          <p>Dal ponte Rialto alla Piazza San Marco</p>
-        </div>
-        <h2 class="card-trip-pricing">30€</h2>
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1516792420189-90be9f795331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Venise Vedi Vice</h2>
-          <p>Dal ponte Rialto alla Piazza San Marco</p>
-        </div>
-        <h2 class="card-trip-pricing">30€</h2>
-        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-      </div>
-    </div>
+        <% end %>
+    <!-- </div> -->
   </div>
 </div>
