@@ -38,11 +38,20 @@
     </div>
     <div class="col-xs-3 text-right" id="Guide">
       <h4 class= "title">Guide</h4>
+
       <%= cl_image_tag @tour.user.photo, height: 50, class: 'img-circle' %>
       <!-- <img src="https://images.unsplash.com/photo-1524568000-769b511e73de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" style='border-radius: 50%; height: 100px' alt=""> -->
       <br>
       <p> <%= @tour.user.first_name %> </p>
     </div>
   </div>
+  <% if policy(@tour).destroy? %>
+    <p>
+      <%= link_to tour_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash-alt">
+        </i>
+      <% end %>
+    </p>
+  <% end %>
 </div>
 
