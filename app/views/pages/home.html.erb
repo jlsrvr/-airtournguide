@@ -20,9 +20,9 @@
           <div class='card-trip '>
             <div class="card-body" style="background-image:url(
             <% if tour.photo.present? %>
-              '<%= cl_image_path tour.photo %>'
+              '<%= cl_image_path tour.photo, height: 300, crop: :fit %>'
             <% else %>
-              '<%= cl_image_path "https://picsum.photos/500/300/?random" %>'
+              '<%= cl_image_path "https://picsum.photos/500/300/?random", height: 150, crop: :fit %>'
             <% end %>)",
             >
             </div>
