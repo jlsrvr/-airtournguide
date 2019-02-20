@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @my_bookings = current_user.bookings
-    @booked = current_user.bookings_as_guide
+    @bookings = policy_scope(Booking)
+    # @tours = policy_scope(Tour)
   end
 
   def new
