@@ -24,6 +24,7 @@ class ToursController < ApplicationController
   end
 
   def edit
+    authorize @tour
   end
 
   def create
@@ -38,6 +39,7 @@ class ToursController < ApplicationController
   end
 
   def update
+    authorize @tour
     @tour.update(tours_params)
     redirect_to tour_path(@tour)
   end
