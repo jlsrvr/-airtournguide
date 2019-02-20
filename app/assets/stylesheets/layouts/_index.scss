@@ -4,5 +4,11 @@
 // @import "profile";
 // @import "map";
 @import "tour-show";
+@import "tour-edit";
 @import "bookings-index";
 
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+}
