@@ -29,7 +29,7 @@
             <div class='card-trip-infos'>
               <div>
                 <h2><%=tour.name%></h2>
-                <p><%= tour.description%> </p>
+                <p><%= tour.description[0..28]%> </p>
               </div>
               <h2 class='card-trip-pricing'><%=  tour.price%> €</h2>
               <%=   cl_image_tag tour.user.photo, class: 'card-trip-user avatar-bordered'%>
