@@ -1,13 +1,18 @@
 .footer {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background: #4ab4cd;
   display: flex;
-  position: sticky;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   padding: 0px 50px;
   color: white;
   margin-top: 20px;
+  font-size: 15px;
+  font-weight: lighter;
 }
 .footer-links {
   display: flex;
