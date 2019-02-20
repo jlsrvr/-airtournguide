@@ -1,36 +1,30 @@
-<!-- Là, ce que j'ai fait c'est la liste des Bookings (pour les voyageurs)
-- Il faut modifier l'avatar pour qu'il corresponde à l'avatar du guide.
-- Il faut modifier la classe "status" avec des "if" pour que la couleur change en fonction de Accepted, Pending & Declined.
-- Il faut rajouter une tab pour les Tours booked (pour les guides) avec la dropdown list pour les status -->
-<div class="wrapper">
-  <div class="container">
-    <div class="dashboard">
-      <div class="tabs">
-        <%= link_to "My bookings", bookings_path, class: "tab active" %>
-        <a href="#" class="tab">My tours</a>
-      </div>
-
-      <% @bookings.each do |booking| %>
-        <% if booking.user == current_user %>
-          <div class="message">
-            <%= cl_image_tag booking.tour.user.photo, class: 'avatar-large' %>
-            <div class="message-name">
-              <h3><%= booking.tour.user.first_name %></h3>
-              <p><%= booking.date %></p>
-            </div>
-            <div class="message-body">
-              <p><strong><%= booking.tour.name %></strong></p>
-              <p>
-                <%= booking.tour.description %>
-              </p>
-            </div>
-            <div class="message-status">
-              <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
-              <p class="price"><%= booking.tour.price %>€</p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+<div class="container">
+  <div class="dashboard">
+    <div class="tabs">
+      <%= link_to "My bookings", bookings_path, class: "tab active" %>
+      <a href="#" class="tab">My tours</a>
     </div>
+
+    <% @bookings.each do |booking| %>
+      <% if booking.user == current_user %>
+        <div class="message">
+          <%= cl_image_tag booking.tour.user.photo, class: 'avatar-large' %>
+          <div class="message-name">
+            <h3><%= booking.tour.user.first_name %></h3>
+            <p><%= booking.date %></p>
+          </div>
+          <div class="message-body">
+            <p><strong><%= booking.tour.name %></strong></p>
+            <p>
+              <%= booking.tour.description %>
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
+            <p class="price"><%= booking.tour.price %>€</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
