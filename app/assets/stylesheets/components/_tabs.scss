@@ -1,0 +1,25 @@
+.tabs {
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+.tab {
+  text-decoration: none;
+  color: rgba(0,0,0,0.3);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 8px
+}
+
+.tab:visited {
+  text-decoration: none;
+}
+
+.active {
+  color: rgba(0,0,0,0.8);
+  border-bottom: 5px solid #4ab4cd;
+}
+
+.tab:hover {
+  color: rgba(0,0,0,0.8);
+}
