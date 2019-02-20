@@ -15,6 +15,8 @@
   </div>
 </div>
 
+
+
 <div class="container">
 <h1 class="text-center">Tours around the world</h1>
 
@@ -34,8 +36,8 @@
               <% end %>) "></div>
               <div class='card-trip-infos'>
                 <div>
-                  <h2><%=tour.name%></h2>
-                   <p><%= tour.description%> </p>
+                  <h2>#{tour.name}</h2>
+                   <p>#{tour.description[0..28]}...</p>
                 </div>
                <h2 class='card-trip-pricing'><%=  tour.price%> €</h2>
                <%=   cl_image_tag tour.user.photo, class: 'card-trip-user avatar-bordered'%>
@@ -50,9 +52,13 @@
         </div>
       </div>
     <div class="col-xs-4">
-      <div id="map">
-        <img src="https://images.unsplash.com/photo-1532154066703-3973764c81fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
-      </div>
+      <div
+         id="map"
+         style="width: 100%;
+         height: 600px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+       ></div>
     </div>
     </div>
   </div>
