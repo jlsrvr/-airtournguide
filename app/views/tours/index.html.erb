@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="cards-T">
+  <div class="cards-Top">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513736302339-d4d0335c0fb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
         Paris
       </div>
@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col-xs-8">
       <div class="row">
-          <div class="cards-I">
+          <div class="cards">
           <% @tours.each do |tour| %>
            <%= link_to "<div class='card-trip'
            style='background-image: url('<%= cl_image_path tour.photo %>')'>
