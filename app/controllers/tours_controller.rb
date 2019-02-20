@@ -8,7 +8,8 @@ class ToursController < ApplicationController
     @markers = @tours.map do |tour|
       {
         lng: tour.longitude,
-        lat: tour.latitude
+        lat: tour.latitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { tour: tour })
       }
     end
   end
