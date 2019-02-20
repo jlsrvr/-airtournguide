@@ -1,11 +1,11 @@
 .footer {
-  background: darkgrey;
+  background: #4ab4cd;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: white;
   margin-top: 20px;
 }
 .footer-links {
@@ -13,15 +13,16 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: white;
+  opacity: 0.5;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
   opacity: 1;
+  color: #e6b30e;
 }
-.footer .fa-heart {
-  color: #D23333;
+.footer .fas {
+  color: #e6b30e;
 }
