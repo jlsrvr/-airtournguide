@@ -1,0 +1,37 @@
+_cards.html.erb
+
+<div class='card-trip '>
+  <div class="card-body" style="background-image:url(
+  <% if tour.photo.present? %>
+  '<%= cl_image_path tour.photo %>'
+  <% else %>
+  '<%= cl_image_path "https://picsum.photos/200/300/?random" %>'
+  <% end %>) "></div>
+  <div class='card-trip-infos'>
+    <div>
+      <h2><%= tour.name %></h2>
+       <p><%= tour.description[0..20] %>...</p>
+    </div>
+   <h2 class='card-trip-pricing'><%= tour.price %> €</h2>
+   <%=   cl_image_tag tour.user.photo, class: 'card-trip-user avatar-bordered'%>
+  </div>
+  <%= link_to '', tour_path(tour), class: 'card-link' %>
+</div>
+
+<div class='card-trip '>
+  <div class="card-body" style="background-image:url(
+  <% if tour.photo.present? %>
+    '<%= cl_image_path tour.photo, height: 300, crop: :fit %>'
+  <% else %>
+    '<%= cl_image_path "https://picsum.photos/500/300/?random", height: 150, crop: :fit %>'
+  <% end %>)"></div>
+  <div class='card-trip-infos'>
+    <div>
+      <h2><%=tour.name%></h2>
+      <p><%= tour.description[0..20]%> </p>
+    </div>
+    <h2 class='card-trip-pricing'><%=  tour.price%> €</h2>
+    <%=   cl_image_tag tour.user.photo, class: 'card-trip-user avatar-bordered'%>
+  </div>
+  <%= link_to '', tour_path(tour), class: 'card-link' %>
+</div>
