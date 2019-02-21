@@ -2,11 +2,18 @@
   <div class="container text-center">
     <h1>Discover places in a new way!</h1>
     <p>Visit <span id="banner-typed-text2"></span>like a <span id="banner-typed-text">local!</span></p>
-       <div class="search">
-          <input type="text" class="searchTerm" placeholder="Where are you going ?">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-         </button>
+
+
+    <%= form_tag tours_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a city"
+      %>
+    <% end %>
+
+
+
        </div>
   </div>
 </div>
