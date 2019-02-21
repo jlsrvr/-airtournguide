@@ -1,11 +1,17 @@
 class ToursController < ApplicationController
   before_action :find_tour, only: [:show, :edit, :update, :destroy]
+  skip_after_action :verify_policy_scoped, only: :index
 
   def index
-    @tours = policy_scope(Tour).order(created_at: :asc)
-    @tours = Tour.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @tours = Tour.search_by_city(params[:query])
+      @tours_for_map = @tours.where.not(latitude: nil, longitude: nil)
+    else
+      @tours = Tour.all
+      @tours_for_map = @tours.where.not(latitude: nil, longitude: nil)
+    end
 
-    @markers = @tours.map do |tour|
+    @markers = @tours_for_map.map do |tour|
       {
         lng: tour.longitude,
         lat: tour.latitude,
