@@ -1,8 +1,14 @@
 .container.calendar {
   text-align: center;
+  width: 300px;
 }
 
 .btn.btn-primary {
   background-color: #4AB4CD;
   border: none;
+  align-items: center;
+}
+
+#new_booking {
+  text-align: center;
 }
