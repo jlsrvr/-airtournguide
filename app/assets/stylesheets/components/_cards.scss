@@ -18,14 +18,22 @@
   }
 }
 
+.card-link {
+ top:0;
+ right:0;
+ left:0;
+ position: absolute;
+ bottom:0;
+ background-color: black;
+ opacity:0;
+}
 
 // variables
 $card-width:  100%;
 $card-height: 220px;
-$h-color:     #9CC9E3;
-$yellow:      #D0BB57;
+$h-color:     #4ab4cd;
+$yellow:      #e6b30e;
 $txt-color:   #DCE3E7;
-
 
 .blog-card{
   width: $card-width;
@@ -68,7 +76,7 @@ $txt-color:   #DCE3E7;
 
     .card-info{
       opacity: 1;
-      bottom: 85px;
+      top: 80px;
     }
     .color-overlay{
       background: rgba(84,104,110,0.8);
@@ -90,7 +98,6 @@ h3{
   font-weight: 500;
   letter-spacing: 2px;
   color: $h-color;
-  font-family: 'Roboto', sans-serif;
   margin-bottom: 0;
 }
 hr{
@@ -104,7 +111,6 @@ hr{
   width: 170px;
   margin: 0 auto;
   color: $txt-color;
-  font-family: 'Droid Serif', serif;
   font-size: 13px;
   font-style: italic;
   line-height: 18px;
@@ -112,14 +118,13 @@ hr{
 .card-info{
   width: 100%;
   position: absolute;
-  bottom: 20px;
+  top: 80px;
   left: 0;
   margin: 0 auto;
   padding: 0 10px;
   color: $txt-color;
-  font-family: 'Droid Serif', serif;
-  font-style: 10px;
-  line-height: 15px;
+  font-size: 18px;
+  line-height: 25px;
   z-index: 20;
   opacity: 0;
   transition: bottom .3s, opacity .3s cubic-bezier(.33,.66,.66,1);
@@ -142,7 +147,6 @@ hr{
     padding-right: 9px;
     display: inline-block;
     color: $txt-color;
-    font-family: 'Roboto', sans-serif;
   }
 }
 
