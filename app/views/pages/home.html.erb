@@ -12,12 +12,12 @@
 </div>
 
 <div class="container">
-  <div class="col-xs-12">
-    <!-- <div class="cards"> -->
-      <% @tours = Tour.all %>
-      <% @tours.each do |tour| %>
+  <% @tours = Tour.all %>
+  <div class="row">
+    <% @tours.each do |tour| %>
+      <div class="col-xs-6 col-sm-3">
         <%= render 'shared/cards', tour: tour %>
-        <% end %>
-    <!-- </div> -->
+      </div>
+    <% end %>
   </div>
 </div>
