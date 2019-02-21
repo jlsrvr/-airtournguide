@@ -16,6 +16,8 @@ class ToursController < ApplicationController
 
   def personal_index
     @tours = policy_scope(Tour)
+    @bookings = Booking.all.select { |booking| booking.tour.user == current_user }
+
     # @current_user_id = current_user.id.to_s
     # @tours = Tour.where(params[:user_id] = @current_user_id)
   end

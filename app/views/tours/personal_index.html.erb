@@ -6,25 +6,58 @@
       <%= link_to "My tours", ptours_path(current_user), class: "tab active" %>
     </div>
 
-    <% @tours.each do |tour| %>
-        <div class="message">
-          <%= cl_image_tag tour.user.photo, class: 'avatar-large' %>
-          <div class="message-name">
-            <h3><%= tour.user.first_name %></h3>
-            <p></p>
+    <div class="messages">
+      <div class="col-xs-6">
+      <h4>My tours</h4>
+        <% @tours.each do |tour| %>
+          <div class="message-tour">
+            <div class="message">
+              <%= cl_image_tag tour.user.photo, class: 'avatar-large' %>
+              <div class="message-name">
+                <h3><%= tour.user.first_name %></h3>
+                <p></p>
+              </div>
+              <div class="message-body">
+                <p><strong><%= tour.name %></strong></p>
+                <p>
+                  <%= tour.description %>
+                </p>
+              </div>
+              <div class="message-status">
+                <p class="status </p>
+                <p class="price"><%= tour.price %>€</p>
+              </div>
+            </div>
           </div>
-          <div class="message-body">
-            <p><strong><%= tour.name %></strong></p>
-            <p>
-              <%= tour.description %>
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status </p>
-            <p class="price"><%= tour.price %>€</p>
-          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-6">
+        <h4>My reservations</h4>
+        <% @bookings.each do |booking| %>
+          <div class="messsage-booking">
+            <div class="row">
+              <div class="message">
+                <%= cl_image_tag booking.user.photo, class: 'avatar-large' %>
+                <div class="message-name">
+                  <h3><%= booking.tour.user.first_name %></h3>
+                  <p><%= booking.date %></p>
+                </div>
+                <div class="message-body">
+                  <p><strong><%= booking.tour.name %></strong></p>
+                  <p>
+                    <%= booking.tour.description %>
+                  </p>
+                </div>
+                <div class="message-status">
+                  <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
+                  <p class="price"><%= booking.tour.price %>€</p>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
         </div>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
