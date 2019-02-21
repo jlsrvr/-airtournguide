@@ -28,6 +28,6 @@
 <div class="container">
   <h1 class="text-center">Tours around the world</h1>
   <% @tours.each do |tour| %>
-    <%= render 'shared/navbar', tour = tour %>
+    <%= render 'shared/cards', tour: tour %>
   <% end %>
 </div>
