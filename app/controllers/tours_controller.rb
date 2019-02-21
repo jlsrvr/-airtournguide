@@ -14,7 +14,9 @@ class ToursController < ApplicationController
     @markers = @tours_for_map.map do |tour|
       {
         lng: tour.longitude,
-        lat: tour.latitude
+        lat: tour.latitude,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { tour: tour })
+        image_url: helpers.asset_url('noun_Flag_2226775.png')
       }
     end
   end
