@@ -2,7 +2,7 @@ class ToursController < ApplicationController
   before_action :find_tour, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tours = policy_scope(Tour).order(created_at: :asc)
+    skip_policy_scope
     @tours = Tour.where.not(latitude: nil, longitude: nil)
 
     @markers = @tours.map do |tour|
@@ -15,7 +15,9 @@ class ToursController < ApplicationController
   end
 
   def personal_index
-    @tours = Tour.current_user
+    @tours = policy_scope(Tour)
+    # @current_user_id = current_user.id.to_s
+    # @tours = Tour.where(params[:user_id] = @current_user_id)
   end
 
   def show

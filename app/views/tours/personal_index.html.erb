@@ -1,1 +1,30 @@
 
+<div class="container">
+  <div class="dashboard">
+    <div class="tabs">
+      <%= link_to "My bookings", bookings_path, class: "tab" %>
+      <%= link_to "My tours", ptours_path(current_user), class: "tab active" %>
+    </div>
+
+    <% @tours.each do |tour| %>
+        <div class="message">
+          <%= cl_image_tag tour.user.photo, class: 'avatar-large' %>
+          <div class="message-name">
+            <h3><%= tour.user.first_name %></h3>
+            <p></p>
+          </div>
+          <div class="message-body">
+            <p><strong><%= tour.name %></strong></p>
+            <p>
+              <%= tour.description %>
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status </p>
+            <p class="price"><%= tour.price %>€</p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
