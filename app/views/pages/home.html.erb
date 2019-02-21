@@ -3,14 +3,15 @@
     <h1>Discover places in a new way!</h1>
     <p>Visit <span id="banner-typed-text2"></span>like a <span id="banner-typed-text">local!</span></p>
 
-
-    <%= form_tag tours_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a city"
-      %>
-    <% end %>
+    <div class="text-left">
+      <%= form_tag tours_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a city"
+        %>
+      <% end %>
+    </div>
   </div>
 </div>
 
