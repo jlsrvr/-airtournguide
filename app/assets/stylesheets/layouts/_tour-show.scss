@@ -1,5 +1,5 @@
-.container-tour {
-  display: flex;
+.container.tour {
+  margin-top: 20px;
 }
 
 .userInfo {
@@ -13,3 +13,8 @@
   margin-right: 12px;
   margin-top: 8px
 }
+
+.avatar.guide {
+  width: 50px;
+}
+
