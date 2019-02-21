@@ -14,6 +14,10 @@ class ToursController < ApplicationController
     end
   end
 
+  def personal_index
+    @tours = Tour.current_user
+  end
+
   def show
 
   end
