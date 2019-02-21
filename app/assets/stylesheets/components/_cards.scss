@@ -12,17 +12,16 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 15px;
   p {
     margin: 0px;
   }
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
 
 // variables
-$card-width:  250px;
-$card-height: 270px;
+$card-width:  100%;
+$card-height: 220px;
 $h-color:     #9CC9E3;
 $yellow:      #D0BB57;
 $txt-color:   #DCE3E7;
@@ -58,7 +57,7 @@ $txt-color:   #DCE3E7;
     width: $card-width;
     height: $card-height;
     position: absolute;
-    top: 350px;
+    top: 0px;
     left: 0;
     z-index: 15;
   }
@@ -67,7 +66,7 @@ $txt-color:   #DCE3E7;
 
     .card-info{
       opacity: 1;
-      bottom: 100px;
+      bottom: 85px;
     }
     .color-overlay{
       background: rgba(84,104,110,0.8);
@@ -111,14 +110,14 @@ hr{
 .card-info{
   width: 100%;
   position: absolute;
-  bottom: 80px;
+  bottom: 20px;
   left: 0;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 10px;
   color: $txt-color;
   font-family: 'Droid Serif', serif;
-  font-style: 16px;
-  line-height: 24px;
+  font-style: 10px;
+  line-height: 15px;
   z-index: 20;
   opacity: 0;
   transition: bottom .3s, opacity .3s cubic-bezier(.33,.66,.66,1);

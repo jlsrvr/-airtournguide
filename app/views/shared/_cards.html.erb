@@ -1,22 +1,22 @@
 <div class="blog-card" style="background-image:url(
   <% if tour.photo.present? %>
-    '<%= cl_image_path tour.photo, height: 500, width: 350, crop: :fit %>'
+    '<%= cl_image_path tour.photo, height: 220, width: 190, crop: :fit %>'
   <% else %>
-    '<%= cl_image_path "https://picsum.photos/320/350/?random", height: 500, width: 350, crop: :fit %>'
+    '<%= cl_image_path "https://picsum.photos/320/350/?random", height: 220, width: 190, crop: :fit %>'
   <% end %>)">
   <div class="title-content">
     <h3><%= tour.name %></h3>
     <hr />
-    <div class="intro"><%= tour.description[0..20] %></div>
+    <div class="intro"><i class="fas fa-map-pin"></i> <%= tour.city.capitalize %></div>
   </div><!-- /.title-content -->
   <div class="card-info">
-    <%= tour.description %>
+    <%= tour.description[0..40] %>
   </div><!-- /.card-info -->
   <div class="utility-info">
     <ul class="utility-list">
-      <li><i class="fas fa-map-pin"></i> <%= tour.city.capitalize %></li>
+
       <li><i class="fas fa-euro-sign"></i> <%= tour.price %></li>
-      <li><%= cl_image_tag tour.user.photo, width: 30, height: 30, crop: :thumb,class: 'card-trip-user avatar'%></li>
+      <li><%= cl_image_tag tour.user.photo, width: 25, height: 25, crop: :thumb,class: 'card-trip-user avatar'%></li>
     </ul>
   </div><!-- /.utility-info -->
   <!-- overlays -->
