@@ -17,6 +17,13 @@ class ToursController < ApplicationController
 
   def show
     @booking = Booking.new
+    @tour = Tour.find(params[:id])
+
+    @marker = [{
+      lng: @tour.longitude,
+      lat: @tour.latitude,
+      image_url: helpers.asset_url('noun_Flag_2226775.png')
+    }]
   end
 
   def new
