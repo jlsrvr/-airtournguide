@@ -1,5 +1,6 @@
-.container-tour {
+.row.tour {
   display: flex;
+  justify-content: space-around;
 }
 
 .userInfo {

@@ -14,7 +14,7 @@
 
 <%# if @tour.user != current_user %>
   <div class="container">
-    <div class="row">
+    <div class="row tour">
       <div class="col-xs-4 text-center">
         <h4 class="title">Tour description
           <% if policy(@tour).update? %>
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row tour">
       <div class="col-xs-4 text-center" id="Guide">
         <h4 class= "title">Guide</h4>
 
@@ -54,6 +54,13 @@
         <br>
         <p> <%= @tour.user.first_name %> </p>
       </div>
+      <div class="col-xs-4 text-center"
+        id="map"
+        style="width: 75%;
+        height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
     </div>
   </div>
 <%# else %>
