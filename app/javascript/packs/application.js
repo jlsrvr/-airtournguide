@@ -9,3 +9,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
+
+import { previewImageOnFileSelect } from "../components/photo_preview";
+
+previewImageOnFileSelect();
