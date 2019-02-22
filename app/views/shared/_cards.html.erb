@@ -3,7 +3,7 @@
   <% if tour.photo.present? %>
     '<%= cl_image_path tour.photo, height: 220, width: 190, crop: :lfill %>'
   <% else %>
-    '<%= cl_image_path "https://picsum.photos/320/350/?random", height: 220, width: 100, crop: :lfill %>'
+    '<%= cl_image_path "https://loremflickr.com/320/240/#{tour.city}", height: 220, width: 100, crop: :lfill %>'
   <% end %>)">
   <div class="title-content">
     <h3><%= tour.name.capitalize %></h3>
