@@ -19,7 +19,7 @@
 </div>
 
 <div class="container">
-  <% @tours = Tour.all %>
+  <% @tours = Tour.all.first(4) %>
   <div class="row">
     <% @tours.each do |tour| %>
       <div class="col-xs-6 col-sm-3">
