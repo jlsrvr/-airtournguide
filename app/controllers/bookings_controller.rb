@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   skip_after_action :verify_authorized, only: :update
   def index
     @bookings = policy_scope(Booking)
-    # @tours = policy_scope(Tour)
   end
 
   def new

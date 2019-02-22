@@ -1,7 +1,7 @@
 #map {
   position: sticky;
   top: 70px;
-  height: calc(100vh - 70px) ;
+  flex: 0 0 40%;
 }
 
 .mapboxgl-popup {
@@ -10,5 +10,15 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+}
+
+.col-xs-4.custom-md-4 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.row.custom-row {
+    position: relative;
 }

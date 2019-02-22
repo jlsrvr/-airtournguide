@@ -2,42 +2,26 @@
   <div class="container text-center">
     <h1>Discover places in a new way!</h1>
     <p>Visit <span id="banner-typed-text2"></span>like a <span id="banner-typed-text">local!</span></p>
-       <div class="search">
-          <input type="text" class="searchTerm" placeholder="Where are you going ?">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-         </button>
-       </div>
+
+    <div class="text-left">
+      <%= form_tag tours_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a city"
+        %>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div class="container">
-  <div class="col-xs-12">
-    <!-- <div class="cards"> -->
-      <% @tours = Tour.all %>
-      <% @tours.each do |tour| %>
-        <div class= 'col-xs-12 col-sm-6 col-md-4'>
-          <div class='card-trip '>
-            <div class="card-body" style="background-image:url(
-            <% if tour.photo.present? %>
-              '<%= cl_image_path tour.photo, height: 300, crop: :fit %>'
-            <% else %>
-              '<%= cl_image_path "https://picsum.photos/500/300/?random", height: 150, crop: :fit %>'
-            <% end %>)",
-            >
-            </div>
-            <div class='card-trip-infos'>
-              <div>
-                <h2><%=tour.name%></h2>
-                <p><%= tour.description[0..28]%> </p>
-              </div>
-              <h2 class='card-trip-pricing'><%=  tour.price%> €</h2>
-              <%=   cl_image_tag tour.user.photo, class: 'card-trip-user avatar-bordered'%>
-            </div>
-            <%= link_to '', tour_path(tour), class: 'card-link' %>
-          </div>
-        </div>
-        <% end %>
-    <!-- </div> -->
+  <% @tours = Tour.all %>
+  <div class="row">
+    <% @tours.each do |tour| %>
+      <div class="col-xs-6 col-sm-3">
+        <%= render 'shared/cards', tour: tour %>
+      </div>
+    <% end %>
   </div>
 </div>
