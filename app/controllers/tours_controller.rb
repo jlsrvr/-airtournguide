@@ -54,7 +54,7 @@ class ToursController < ApplicationController
     @tour = Tour.new(tours_params)
     authorize @tour
     @tour.user = current_user
-    if @tour.save!
+    if @tour.save
       redirect_to tour_path(@tour)
     else
       render :new

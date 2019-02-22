@@ -4,27 +4,28 @@
       <%= link_to "My bookings", bookings_path, class: "tab active" %>
       <%= link_to "My tours", ptours_path(current_user), class: "tab" %>
     </div>
-
-    <% @bookings.each do |booking| %>
-      <% if booking.user == current_user %>
-        <div class="message">
-          <%= cl_image_tag booking.tour.user.photo, class: 'avatar-large' %>
-          <div class="message-name">
-            <h3><%= booking.tour.user.first_name %></h3>
-            <p><%= booking.date %></p>
+    <div class="scroll-box">
+      <% @bookings.each do |booking| %>
+        <% if booking.user == current_user %>
+          <div class="message">
+            <%= cl_image_tag booking.tour.user.photo, class: 'avatar-large' %>
+            <div class="message-name">
+              <h3><%= booking.tour.user.first_name %></h3>
+              <p><%= booking.date %></p>
+            </div>
+            <div class="message-body">
+              <p><strong><%= booking.tour.name %></strong></p>
+              <p>
+                <%= booking.tour.description %>
+              </p>
+            </div>
+            <div class="message-status">
+              <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
+              <p class="price"><%= booking.tour.price %>€</p>
+            </div>
           </div>
-          <div class="message-body">
-            <p><strong><%= booking.tour.name %></strong></p>
-            <p>
-              <%= booking.tour.description %>
-            </p>
-          </div>
-          <div class="message-status">
-            <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
-            <p class="price"><%= booking.tour.price %>€</p>
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
