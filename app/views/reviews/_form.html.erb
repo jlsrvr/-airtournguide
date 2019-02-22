@@ -1,5 +1,4 @@
 <%= simple_form_for([ tour, review ], remote: true) do |form| %>
-  <%= form.input :user %>
   <%= form.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
   <%= form.input :content, as: :text %>
   <%= form.button :submit %>

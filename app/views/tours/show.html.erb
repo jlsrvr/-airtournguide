@@ -63,6 +63,30 @@
       ></div>
     </div>
   </div>
+  <div class="container reviews">
+    <div class="row">
+      <h2>
+        <%= pluralize @tour.reviews.size, "review" %>
+      </h2>
+      <div id="reviews">
+          <% if @tour.reviews.blank? %>
+            Be the first to leave a review for <%= @tour.name %>
+            <%= render 'reviews/form', tour: @tour, review: Review.new %>
+          <% else %>
+          <div class="row">
+            <div class="col-xs-6">
+              <%= render 'reviews/form', tour: @tour, review: Review.new %>
+            </div>
+            <div id="review" class="col-xs-6">
+            <% @tour.reviews.each do |review| %>
+              <%= render 'reviews/show', review: review %>
+            <% end %>
+            </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
 <% else %>
   <div class="container">
     <div class="row">
@@ -105,22 +129,16 @@
       </div>
     </div>
   </div>
-<% end %>
   <div class="container reviews guide">
     <div class="row">
       <h2>
         <%= pluralize @tour.reviews.size, "review" %>
       </h2>
-
       <div id="reviews">
-
-          <% if @tour.reviews.blank? %>
-            Be the first to leave a review for <%= @tour.name %>
-          <% else %>
             <% @tour.reviews.each do |review| %>
               <%= render 'reviews/show', review: review %>
             <% end %>
-          <% end %>
       </div>
     </div>
   </div>
+<% end %>
