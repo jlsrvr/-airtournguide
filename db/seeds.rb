@@ -46,7 +46,7 @@ user4.password = 'guitouimary'
 user4.first_name = 'Guitou'
 user4.last_name = 'Imary'
 user4.save!
-puts 'user 4 created !'
+puts 'user 4 created !!'
 
 puts 'Creating some tours..'
 20.times do
