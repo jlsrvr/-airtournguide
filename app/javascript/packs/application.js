@@ -28,3 +28,9 @@ previewImageOnFileSelect();
 import { initAutocomplete } from "../plugins/init_autocomplete";
 
 initAutocomplete();
+
+//________________________________________________
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();

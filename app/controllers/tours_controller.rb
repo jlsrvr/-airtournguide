@@ -32,6 +32,7 @@ class ToursController < ApplicationController
   def show
     @booking = Booking.new
     @tour = Tour.find(params[:id])
+    @review = Review.new
 
     @marker = [{
       lng: @tour.longitude,

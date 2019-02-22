@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tours do
 
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: :create
   end
   resources :bookings, only: [:destroy, :index, :update]
   get 'user/:id/tours', to: 'tours#personal_index', as: :ptours
