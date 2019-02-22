@@ -15,7 +15,7 @@
   <div class="utility-info">
     <ul class="utility-list">
       <li><i class="fas fa-euro-sign"></i><%= tour.price %></li>
-      <li><%= cl_image_tag tour.user.photo, width: 25, height: 25, crop: :thumb,class: 'card-trip-user avatar'%></li>
+      <li><%= link_to user_path(tour.user) do %><%= cl_image_tag tour.user.photo, width: 25, height: 25, crop: :thumb,class: 'card-trip-user avatar'%> <% end %></li>
     </ul>
   </div><!-- /.utility-info -->
   <!-- overlays -->
