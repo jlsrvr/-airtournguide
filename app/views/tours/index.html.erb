@@ -24,6 +24,18 @@
   <h1 class="text-center"><strong>Tours around the world</strong></h1>
 </div>
 
+<div class="text-left">
+  <div class="formbar">
+  <%= form_tag tours_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a city"
+    %>
+  <% end %>
+  </div>
+</div>
+
 <div id = "my-flex">
   <div class="cards">
     <div class="row">

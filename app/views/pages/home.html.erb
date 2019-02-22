@@ -4,6 +4,7 @@
     <p>Visit <span id="banner-typed-text2"></span>like a <span id="banner-typed-text">local!</span></p>
 
     <div class="text-left">
+      <div class="formbar">
       <%= form_tag tours_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -11,12 +12,14 @@
           placeholder: "Find a city"
         %>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container">
-  <% @tours = Tour.all %>
+  <h1 class="text-center">Check the latest tours </h1>
+  <% @tours = Tour.all.first(4) %>
   <div class="row">
     <% @tours.each do |tour| %>
       <div class="col-xs-6 col-sm-3">
