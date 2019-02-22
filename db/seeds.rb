@@ -54,7 +54,7 @@ puts 'Creating some tours..'
     name: Faker::DcComics.title,
     price: Faker::Commerce.price.to_i,
     description: 'Lorem[10]',
-    city: ['Montmartre, Paris', 'Kingscross, City of London', 'Piazza San Marco, Venezia', 'Berlin', 'Lille', 'Tour Eiffel, Paris', 'Le Perchoir, Montmartre', 'Palais Princier, Monaco', 'Biarritz', 'Vannes'].sample,
+    city: ['Montmartre, Paris', 'City of London', 'Piazza San Marco, Venezia', 'Berlin', 'Lille', 'Tour Eiffel, Paris', 'Le Perchoir, Montmartre', 'Palais Princier, Monaco', 'Biarritz', 'Vannes'].sample,
     user: User.all.sample
   })
 end
