@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -29,7 +30,6 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails', groups: [:development, :test]
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 gem 'cloudinary', '~> 1.9.1'
 gem "pundit"
