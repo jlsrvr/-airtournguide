@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
     @booking.save
-    redirect_to bookings_path
+    redirect_to ptours_path(current_user)
   end
 
   private

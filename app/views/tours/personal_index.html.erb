@@ -10,55 +10,61 @@
       <div class="row">
         <div class="col-sm-5">
           <h4>My tours</h4>
-          <% @tours.each do |tour| %>
-            <div class="message">
-              <% if tour.photo.present? %>
-                  <%= cl_image_tag tour.photo, height: 100, width: 100, crop: :lfill %>
-                <% else %>
-                  <%= cl_image_tag "https://picsum.photos/100/100/?random", height: 100, width: 100, crop: :lfill %>
-              <% end %><!-- end-if-message -->
-              <div class="message-body">
-                <h4><%= tour.name %></h4>
-              </div><!-- message-body  -->
-              <p class="price"><%= tour.price %>€</p>
-            </div><!-- message  -->
-          <% end %>
+          <div class="scroll-box">
+            <% @tours.each do |tour| %>
+              <div class="message">
+                <% if tour.photo.present? %>
+                    <%= cl_image_tag tour.photo, class: "img-tour", height: 90, width: 100, crop: :lfill %>
+                  <% else %>
+                    <%= cl_image_tag "https://picsum.photos/100/90/?random", class: "img-tour", height: 100, width: 100, crop: :lfill %>
+                <% end %><!-- end-if-message -->
+                <div class="message-body">
+                  <p><strong><%= tour.name %></strong></p>
+                </div><!-- message-body  -->
+                <p class="price"><%= tour.price %>€</p>
+              </div><!-- message  -->
+            <% end %>
+          </div>
         </div><!-- col-xs-6  -->
         <div class="col-sm-7">
           <h4>My reservations</h4>
-          <% @bookings.each do |booking| %>
-            <div class="message">
-              <% if booking.user.photo.present? %>
-                  <%= cl_image_tag booking.user.photo, class: "avatar", height: 50, width: 50, crop: :lfill %>
-                <% else %>
-                  <%= cl_image_tag "http://i.pravatar.cc/50", class: "avatar" %>
-              <% end %><!-- end-if-message -->
-              <div class="message-name">
-                <h3><%= booking.user.first_name %></h3>
-                <p><%= booking.date %></p>
-              </div><!-- message-name -->
-              <div class="message-body">
-                <p><strong><%= booking.tour.name %></strong></p>
-              </div><!-- message-body -->
-              <div class="message-status">
-                <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6">
-                    <%=   simple_form_for booking  do |f| %>
-                      <%= f.submit "Accept", class: "btn btn-yours btn-accept" %>
-                      <input type="hidden" name="status" value="Accepted">
-                    <% end %>
-                  </div><!-- col-xs-12 col-sm-6  -->
-                  <div class="col-xs-12 col-sm-6">
-                    <%=   simple_form_for booking  do |f| %>
-                      <%= f.submit "Decline", class: "btn btn-yours btn-declined" %>
-                      <input type="hidden" name="status" value="Declined">
-                    <% end %>
-                  </div><!-- col-xs-12 col-sm-6  -->
-                </div><!-- row pour form -->
-              </div><!-- message-status -->
-            </div> <!-- message -->
-          <% end %>
+          <div class="scroll-box">
+            <div class="reservations">
+              <% @bookings.each do |booking| %>
+                <div class="message">
+                  <% if booking.user.photo.present? %>
+                      <%= cl_image_tag booking.user.photo, class: "avatar", height: 50, width: 50, crop: :lfill %>
+                    <% else %>
+                      <%= cl_image_tag "http://i.pravatar.cc/50", class: "avatar" %>
+                  <% end %><!-- end-if-message -->
+                  <div class="message-name">
+                    <h3><%= booking.user.first_name %></h3>
+                    <p><%= booking.date %></p>
+                  </div><!-- message-name -->
+                  <div class="message-body">
+                    <p><strong><%= booking.tour.name %></strong></p>
+                  </div><!-- message-body -->
+                  <div class="message-status text-center">
+                    <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6">
+                        <%=   simple_form_for booking  do |f| %>
+                          <%= f.submit "Accept", class: "btn btn-yours btn-accept" %>
+                          <input type="hidden" name="status" value="Accepted">
+                        <% end %>
+                      </div><!-- col-xs-12 col-sm-6  -->
+                      <div class="col-xs-12 col-sm-6">
+                        <%=   simple_form_for booking  do |f| %>
+                          <%= f.submit "Decline", class: "btn btn-yours btn-decline" %>
+                          <input type="hidden" name="status" value="Declined">
+                        <% end %>
+                      </div><!-- col-xs-12 col-sm-6  -->
+                    </div><!-- row pour form -->
+                  </div><!-- message-status -->
+                </div> <!-- message -->
+              <% end %>
+            </div>
+          </div>
         </div><!-- col-xs-6  -->
       </div><!-- row  -->
     </div><!-- messages  -->

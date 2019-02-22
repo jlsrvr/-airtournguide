@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
+  border-bottom: 1.5px solid rgba(74, 180, 205, 0.4);
+  .img-tour {
+    border-radius: 5px
+  }
 }
-
 .message:last-child {
   border-bottom: none;
 }
@@ -45,6 +47,9 @@
   font-size: 14px;
   font-weight: bold;
 }
+.status {
+  margin-bottom: 0px ;
+}
 .status.accepted {
   color: #04A366;
 }
@@ -53,4 +58,9 @@
 }
 .status.pending {
   color: lightgrey;
+}
+
+.scroll-box {
+    height: 400px; /* maximum height of the box, feel free to change this! */
+    overflow-y: scroll;
 }
