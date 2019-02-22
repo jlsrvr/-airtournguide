@@ -96,3 +96,21 @@
     </div>
   </div> -->
 <%# end %>
+  <div class="container">
+    <div class="row">
+      <h2>
+        <%= pluralize @tour.reviews.size, "review" %>
+      </h2>
+
+      <div id="reviews">
+        <% if @tour.reviews.blank? %>
+          Be the first to leave a review for <%= @tour.name %>
+        <% else %>
+          <% @tour.reviews.each do |review| %>
+            <%= render 'reviews/show', review: review %>
+          <% end %>
+        <% end %>
+        <%= render 'reviews/form', tour: @tour, review: @review %>
+      </div>
+    </div>
+  </div>

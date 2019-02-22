@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # has_many :bookings_as_guide, through: :tours, source: :bookings
   has_many :tours
   has_many :bookings
+  has_many :reviews
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

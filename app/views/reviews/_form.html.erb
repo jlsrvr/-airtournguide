@@ -1,0 +1,6 @@
+<%= simple_form_for([ tour, review ]) do |form| %>
+  <%= form.input :user %>
+  <%= form.input :rating %>
+  <%= form.input :content, as: :text %>
+  <%= form.button :submit %>
+<% end %>
