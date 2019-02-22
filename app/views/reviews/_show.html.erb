@@ -1,1 +1,9 @@
-<p><%= review.content %></p>
+<h3>
+  <%= review.user.first_name %><% review.rating.to_i.times do  %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% review.blank_stars.times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+</h3>
+<p class="border"><%= review.content %></p>
