@@ -19,7 +19,7 @@
                     <%= cl_image_tag "https://picsum.photos/100/90/?random", class: "img-tour", height: 100, width: 100, crop: :lfill %>
                 <% end %><!-- end-if-message -->
                 <div class="message-body">
-                  <p><strong><%= tour.name %></strong></p>
+                  <p><strong><%= link_to tour.name, tour_path(tour)%></strong></p>
                 </div><!-- message-body  -->
                 <p class="price"><%= tour.price %>€</p>
               </div><!-- message  -->
