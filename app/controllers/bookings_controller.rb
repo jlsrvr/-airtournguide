@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  skip_after_action :verify_authorized, only: :update
   def index
     @bookings = policy_scope(Booking)
   end
@@ -21,6 +22,13 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.status = params[:status]
+    @booking.save
+    redirect_to bookings_path
   end
 
   private
